@@ -4,14 +4,13 @@
   box-sizing: border-box;
 }
 
-/* light theme */
+
 :root {
   --bg: #f3f4f6;
   --text: #111827;
   --card: #e5e7eb;
 }
 
-/* dark theme */
 [data-theme="dark"] {
   --bg: #121212;
   --text: #f9fafb;

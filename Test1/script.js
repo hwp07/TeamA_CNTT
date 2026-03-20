@@ -1,15 +1,15 @@
 const toggleBtn = document.getElementById("toggle");
 
-/* ===== Lấy theme đã có ===== */
+// Lấy theme có sẵn
 const savedTheme = localStorage.getItem("theme");
 const prefersDarkMode = window.matchMedia(
   "(prefers-color-scheme: dark)",
 ).matches;
 
-/* ===== Ưu tiên: localStorage → system → mặc định ===== */
+// Ưu tiên: localStorage -> system -> mặc định
 let currentTheme = savedTheme || (prefersDarkMode ? "dark" : "light");
 
-/* ===== Áp dụng theme ===== */
+// /Áp dụng theme*
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
 
@@ -25,10 +25,9 @@ function applyTheme(theme) {
   );
 }
 
-/* ===== Init ===== */
 applyTheme(currentTheme);
 
-/* ===== Toggle ===== */
+// Toggle
 toggleBtn.addEventListener("click", () => {
   currentTheme = currentTheme === "dark" ? "light" : "dark";
   applyTheme(currentTheme);
